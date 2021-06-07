@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please Scan The Customer ID</h1>
+    <canvas id="canvas" style="width: 100%;"></canvas>
+ 
+    <script src="node_modules/qrcode/build/qrcode.min.js"></script>
+    <script>
+
+        setInterval(async function() {
+            console.log("HELLO")
+            url = "http://18.224.8.222:5000/show_visit/?current=1"
+            console.log(url)
+            
+            try {
+                const response = await fetch(url);
+                const current = await response.json();
+                customerID = current[0].customer_id
+
+
+                QRCode.toCanvas(document.getElementById('canvas'), customerID, function (error) {
+                    if (error) console.error(error)
+                    console.log('success!');
+                })
+                
+            }
+            catch(error) {
+                console.log("No Person")
+                setTimeout(() => window.location.reload(),1000)
+                //window.location.reload()
+                //alert("Customer Name/Customer ID not found/Cart Empty")        
+            }
+        }, 1000)
+
+
+    </script>
+</body>
+</html>
