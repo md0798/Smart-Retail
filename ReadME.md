@@ -4,7 +4,7 @@ Smart Retail System is a practical system using cameras that leverages existing 
 We aim to build a system that can improve customer in-store shopping experience, but without requiring significant store re-design for the store owners, by only implementing cheap cameras. The system will also help direct labor cost savings, integrate inventory management, reduce instances of theft, and provide retailers with rich behavioral analytics.
 The system needs to accurately identify and track customers,and associate each shopper with items he or she retrieves from shelves. To do this, we use cameras for facial recognition and object detection, and also develop algorithms for associating and tracking object movements with current face of customer. We use a probabilistic framework to fuse readings from object detection camera and face recognition camera in order to accurately assess which shopper picks up which item.
 
-The video for the project can be viewwed here https://www.youtube.com/watch?v=-Rj5U5PwPYQ
+The video for the project can be viewed here https://www.youtube.com/watch?v=-Rj5U5PwPYQ
 
 Motivation
 
